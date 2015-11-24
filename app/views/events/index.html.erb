@@ -1,0 +1,26 @@
+<h1>Events List</h1>
+
+<% @events.each do |event| %>
+  <% if event.publish == "yes" %>
+    <h2><%=  event.title %></h2>
+    <h3><%= event.day %>.<%= event.month  %>.<%= event.year  %></h3>
+    <div><%= simple_format(event.body) %></div>
+    <br>
+
+     <div title="Add to Calendar" class="addeventatc">
+        Add to Calendar
+        <span class="start"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.start %></span>
+        <span class="end"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.end %></span>
+        <span class="timezone">Europe/Luxembourg</span>
+        <span class="title"><%= event.calendar_title %></span>
+        <span class="description">Home-cooked movies at the 'Modernity – loved, hated or Ignored' exhibition at the LUCA</span>
+        <span class="location"><%= event.address_one %>, <%= event.postcode %> <%= event.city %></span>
+        <span class="facebook_event"></span>
+        <span class="date_format">DD/MM/YYYY</span>
+      </div>
+
+
+    <br>
+    <%= link_to "View Post ", event %>
+  <% end %>
+<% end %>
