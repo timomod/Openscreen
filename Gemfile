@@ -1,4 +1,11 @@
+ruby '2.2.0'
+
 source 'https://rubygems.org'
+
+# Added by Timo: gems for Heroku
+
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
