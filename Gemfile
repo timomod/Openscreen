@@ -3,9 +3,15 @@ ruby '2.2.0'
 source 'https://rubygems.org'
 
 # Added by Timo: gems for Heroku
-
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
+
+
+# Added by Timo: front-end gems
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'font-awesome-sass', '~> 4.4.0'
+gem 'simple_form'
+gem "autoprefixer-rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -23,6 +29,13 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+
+# Added by Timo: jquery gem required for scrolling navigation
+gem 'jquery-easing-rails', '~> 0.0.2'
+
+
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
