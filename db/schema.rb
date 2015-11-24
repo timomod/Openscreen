@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124122333) do
+ActiveRecord::Schema.define(version: 20151124180739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,17 +23,18 @@ ActiveRecord::Schema.define(version: 20151124122333) do
     t.text     "body"
     t.string   "calendar_title"
     t.string   "calendar_body"
-    t.integer  "day"
-    t.integer  "month"
-    t.integer  "year"
+    t.string   "day"
+    t.string   "month"
+    t.string   "year"
     t.string   "start"
     t.string   "end"
     t.string   "address_one"
     t.string   "address_two"
-    t.integer  "postcode"
+    t.string   "postcode"
     t.string   "city"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "week_day"
   end
 
 end

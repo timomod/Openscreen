@@ -1,0 +1,11 @@
+
+<h3> <%= @event.day %>.<%= @event.month %>.<%= @event.year %></h3>
+<h2><%= @event.title %></h2>
+<h2><%= @event.subtitle %></h2>
+<div><%= simple_format(@event.body) %></div>
+
+
+
+
+<%=link_to "Edit event", edit_event_path %> &nbsp;
+<%=link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
