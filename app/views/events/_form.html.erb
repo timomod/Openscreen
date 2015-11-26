@@ -5,7 +5,7 @@
   <h3>Event details:</h3>
 
   <%= f.label 'Publish event?' %><br>
-  <%= f.input :publish, label:false  %><br>
+  <%= f.input :publish, label:false, placeholder: 'yes/no'  %><br>
 
 
 
@@ -13,11 +13,16 @@
   <%= f.input :title, label: false, placeholder: 'Event name' %><br>
 
   <%= f.label 'Event description' %><br>
-  <%= f.input :body, label: false, :input_html => {:cols => 100, :rows => 12} %><br>
+  <%= f.input :body, label: false, placeholder: 'Event description', :input_html => {:cols => 100, :rows => 12} %><br>
+  <%= f.label 'Event deadline' %><br>
+  <%= f.input :deadline, label: false, placeholder: 'dd/mm/yyyy' %><br>
   <br>
   <h4>"Add to Calendar" data:</h4>
-   <%= f.label 'Short description for calendar:' %><br>
+  <%= f.label 'Short description for calendar:' %><br>
   <%= f.input :calendar_title, label: false %><br>
+
+  <%= f.label 'Weekday:' %>
+  <%= f.input :week_day, label: false , placeholder: 'Monday' %>
 
   <%= f.label 'Day:' %>
   <%= f.input :day, label: false, collection: 1..31   %>
@@ -26,18 +31,20 @@
    <%= f.label 'Year:' %>
   <%= f.input :year, label: false  %>
   <%= f.label 'Start Time:' %>
-  <%= f.input :start, label: false  %>
+  <%= f.input :start, label: false , placeholder: '00:00' %>
   <%= f.label 'End Time:' %>
-  <%= f.input :end, label: false  %>
+  <%= f.input :end, label: false , placeholder: '00:00'  %>
   <p>Address:</p>
-  <%= f.label 'Address Line 1:' %>
+  <%= f.label 'Venue:' %>
   <%= f.input :address_one, label: false  %>
-  <%= f.label 'Address Line 1:' %>
+  <%= f.label 'Address:' %>
   <%= f.input :address_two, label: false  %>
   <%= f.label 'Postal Code:' %>
   <%= f.input :postcode, label: false  %>
   <%= f.label 'City' %>
   <%= f.input :city, label: false  %>
+  <%= f.label 'Facebook Event URL' %>
+  <%= f.input :facebook, label: false  %>
 
 
 

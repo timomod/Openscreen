@@ -2,3 +2,30 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+ // color of Navigation links post-scroll
+
+
+
+// Positions cover page content
+.cover-content{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+
+}
+
+// Adds background image
+body {
+      background: url('bg.jpg') no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+// Tint overlay for background image
+.tint {
+  background-image: linear-gradient( to right, rgba(2, 0, 0, .7), rgba(2, 0, 0, .2),rgba(2, 0, 0, .7));
+}

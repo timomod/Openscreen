@@ -15,6 +15,7 @@
 
 //= require bootstrap-sprockets
 //= require jquery.easing
+//= require scrolling-nav
 
 //= require turbolinks
 //= require_tree .

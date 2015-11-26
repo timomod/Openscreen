@@ -1,0 +1,39 @@
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
+of those sections to manage the look and feel of the site. */
+
+.intro-section {
+    height: 100%;
+    text-align: center;
+    background: transparent;
+}
+
+
+
+.sponsor-section {
+    padding-top: 50px;
+    padding-bottom:50px;
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.events-section {
+    height: 100%;
+    padding-top: 150px;
+    background: #fff;
+}
+
+.getinvolved-section {
+    height: 100%;
+    padding-top: 150px;
+    background: #fff;
+}
+
+.about-section {
+    height: 100%;
+    padding-top: 150px;
+    background: #fff;
+}
+
+
