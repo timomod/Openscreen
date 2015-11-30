@@ -16,6 +16,10 @@ gem "autoprefixer-rails"
 # Added by Timo: gem to hide access keys
 gem 'figaro'
 
+# Added by Timo: gems to allow image uploads
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record

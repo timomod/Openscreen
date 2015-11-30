@@ -3,6 +3,7 @@
 <h2><%= @event.title %></h2>
 <h2><%= @event.subtitle %></h2>
 <div><%= simple_format(@event.body) %></div>
+<div><%= image_tag @event.picture.url(:thumb) %></div>
 
 
 
