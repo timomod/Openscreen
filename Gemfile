@@ -13,6 +13,8 @@ gem 'font-awesome-sass', '~> 4.4.0'
 gem 'simple_form'
 gem "autoprefixer-rails"
 
+# Added by Timo: gem to hide access keys
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
