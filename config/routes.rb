@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'events/cms' => 'events#cms'
+
   resources :events
 
 root 'events#index'

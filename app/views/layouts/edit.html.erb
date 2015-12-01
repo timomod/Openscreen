@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Openscreen</title>
+  <title><%= yield(:title) || "Openscreen" %></title>
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,19 +12,48 @@
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
 
-
   <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="home_bg">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
 
-  <%= render 'shared/navigation' %>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><%= link_to "Home", events_path %></li>
+    <li><%= link_to "New Post", new_event_path %></li>
+  </ul>
+</div>
+
+
+<section id="Edit">
+  <div class="container-fluid wow fadeIn">
+    <div class="col-md-10 col-md-offset-1 padded-div-s">
+      <div class="row">
 
 <%= yield %>
+
+      </div>
+    </div>
+  </div>
+ </section>
+
 
 </body>
 </html>

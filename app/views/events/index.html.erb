@@ -3,7 +3,7 @@
  <section id="intro" class="intro-section tint">
         <div class="container cover-content">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-12 fadeIn">
                     <h1> Some header text here</h1>
                     <h2>Sub header</h2>
                     <p>A little more here</p>
@@ -20,9 +20,9 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 text-center">
               <div class="col-md-12 text-muted">Funded by:</div>
-              <div class="col-sm-4 col-md-4"><%= image_tag "logo_ons.png", {class: "logo-wide"}%></div>
-              <div class="col-sm-4 col-md-4"><%= image_tag "logo_focuna.png", {class: "logo-high"}%></div>
-              <div class="col-sm-4 col-md-4"><%= image_tag "logo_gouv_mc.png", {class: "logo-wide"}%></div>
+              <div class="col-md-4 col-md-4"><%= image_tag "logo_ons.png", {class: "logo-wide"}%></div>
+              <div class="col-md-4 col-md-4"><%= image_tag "logo_focuna.png", {class: "logo-high"}%></div>
+              <div class="col-md-4 col-md-4"><%= image_tag "logo_gouv_mc.png", {class: "logo-wide"}%></div>
             </div>
           </div>
       </div>
@@ -41,7 +41,7 @@
 <section id="events" class="events-section" >
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-md-8 col-md-offset-2">
 
 
 
@@ -54,25 +54,61 @@
               <% @events.each do |event| %>
                 <% if event.publish == "yes" %>
                   <hr>
-                  <h3><%= event.week_day %>, <%= event.day %>.<%= event.month  %>.<%= event.year  %></h3>
-                  <h2><%=  event.title %></h2>
-                  <div><%= simple_format(event.body) %></div>
-                  <br>
+                  <!-- Main content -->
+
+                    <h3><%= event.week_day %>, <%= event.day %>.<%= event.month  %>.<%= event.year  %></h3>
+                    <h2><%=  event.title %></h2>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= simple_format(event.body) %></div>
+                        <br>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag event.picture.url(:large), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
 
 
                   <!--  Add to calendar widget  -->
-                   <div title="Add to Calendar" class="addeventatc">
-                      Add to Calendar
-                      <span class="start"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.start %></span>
-                      <span class="end"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.end %></span>
-                      <span class="timezone">Europe/Luxembourg</span>
-                      <span class="title"><%= event.calendar_title %></span>
-                      <span class="description"><%= event.calendar_body%></span>
-                      <span class="location"><%= event.address_one %> <br><%= event.address_two %>,<%= event.postcode %> <%= event.city %></span>
-                      <span class="facebook_event"></span>
-                      <span class="date_format">DD/MM/YYYY</span>
+
+                  <div class="addeventatc ">
+
+                     <div title="Add to Calendar" >
+                        Add to Calendar
+                        <span class="start"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.start %></span>
+                        <span class="end"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.end %></span>
+                        <span class="timezone">Europe/Luxembourg</span>
+                        <span class="title"><%= event.calendar_title %></span>
+                        <span class="description"><%= event.calendar_body%></span>
+                        <span class="location"><%= event.address_one %> <br><%= event.address_two %>,<%= event.postcode %> <%= event.city %></span>
+                        <span class="facebook_event"></span>
+                        <span class="date_format">DD/MM/YYYY</span>
+                      </div>
                     </div>
+
                    <!--  End add to calendar -->
+
+                   <!-- Info Box-->
+                    <div class="row">
+                      <div class="col-md-12 shaded-bg">
+
+                        <div class="col-sm-12 col-md-4">
+                          <i class="ion-ios-email-outline size-48"></i><br><a href="mailto:info@openscreen.lu?Subject=<%= event.calendar_title %>">info@openscreen.lu</a></p>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 ">
+                          <i class="icon ion-ios-location-outline size-48"></i><br><%= event.address_one %><br><%= event.address_two %><br>
+                          <%= event.postcode %> <%= event.city %> <br>(<a href="https://goo.gl/maps/QKWDRHrV1LU2" target="blank">View map</a>)
+                        </div>
+
+                        <div class="col-sm-12 col-md-4">
+                          <i class="icon ion-ios-time-outline size-48"></i><br><%=  event.start %> CET<br><%= event.week_day %>, <%= event.day %>.<%= event.month %>.<%= event.year %>
+                        </div>
+
+                      </div>
+                    </div>
 
 
                   <br>
