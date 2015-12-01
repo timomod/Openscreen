@@ -6,12 +6,13 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
-              <h1>Published Events</h1>
+              <h1>Published Events <i class="icon-green ion-checkmark"></i></h1>
 
 
               <% @events.each do |event| %>
                 <% if event.publish == "yes" %>
                   <hr>
+
                   <!-- Main content -->
 
                     <h3><%= event.week_day %>, <%= event.day %>.<%= event.month  %>.<%= event.year  %></h3>
@@ -44,7 +45,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
-              <h1>Unpublished Events</h1>
+              <h1>Unpublished Events <i class="icon-red ion-close"></i></h1>
 
 
               <% @events.each do |event| %>
