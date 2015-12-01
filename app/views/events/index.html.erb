@@ -35,7 +35,7 @@
 
 
 
-
+<!-- Start Events Section -->
 
 
 <section id="events" class="events-section" >
@@ -73,7 +73,7 @@
 
                   <!--  Add to calendar widget  -->
 
-                  <div class="addeventatc ">
+                  <div class="addeventatc">
 
                      <div title="Add to Calendar" >
                         Add to Calendar
@@ -92,19 +92,19 @@
 
                    <!-- Info Box-->
                     <div class="row">
-                      <div class="col-md-12 shaded-bg">
+                      <div class="col-md-12 shaded-bg text-center">
 
                         <div class="col-sm-12 col-md-4">
-                          <i class="ion-ios-email-outline size-48"></i><br><a href="mailto:info@openscreen.lu?Subject=<%= event.calendar_title %>">info@openscreen.lu</a></p>
+                          <i class="icon ion-ios-email-outline"></i><br><a href="mailto:info@openscreen.lu?Subject=<%= event.calendar_title %>">info@openscreen.lu</a></p>
                         </div>
 
                         <div class="col-sm-12 col-md-4 ">
-                          <i class="icon ion-ios-location-outline size-48"></i><br><%= event.address_one %><br><%= event.address_two %><br>
+                          <i class="icon ion-ios-location-outline"></i><br><%= event.address_one %><br><%= event.address_two %><br>
                           <%= event.postcode %> <%= event.city %> <br>(<a href="https://goo.gl/maps/QKWDRHrV1LU2" target="blank">View map</a>)
                         </div>
 
                         <div class="col-sm-12 col-md-4">
-                          <i class="icon ion-ios-time-outline size-48"></i><br><%=  event.start %> CET<br><%= event.week_day %>, <%= event.day %>.<%= event.month %>.<%= event.year %>
+                          <i class="icon ion-ios-clock-outline"></i><br><%=  event.start %> CET<br><%= event.week_day %>, <%= event.day %>.<%= event.month %>.<%= event.year %>
                         </div>
 
                       </div>

@@ -1,0 +1,78 @@
+<h1>Admin home</h1>
+
+
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <h1>Published Events</h1>
+
+
+              <% @events.each do |event| %>
+                <% if event.publish == "yes" %>
+                  <hr>
+                  <!-- Main content -->
+
+                    <h3><%= event.week_day %>, <%= event.day %>.<%= event.month  %>.<%= event.year  %></h3>
+                    <h2><%=  event.title %></h2>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= truncate(event.body, :length => 99) %></div>
+
+                        <br>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag event.picture.url(:thumb), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to " View Event", event %>
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <h1>Unpublished Events</h1>
+
+
+              <% @events.each do |event| %>
+                <% if event.publish == "no" %>
+                  <hr>
+                  <!-- Main content -->
+
+                    <h3><%= event.week_day %>, <%= event.day %>.<%= event.month  %>.<%= event.year  %></h3>
+                    <h2><%=  event.title %></h2>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= truncate(event.body, :length => 99) %></div>
+
+                        <br>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag event.picture.url(:thumb), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to " View Event", event %>
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>

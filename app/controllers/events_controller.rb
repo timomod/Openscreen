@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-    layout "edit", only: [:new, :create, :show, :edit, :update, :destroy]
+    layout "admin_index", only: [:new, :create, :show, :edit, :update, :destroy, :admin]
 
     before_action :find_event, only: [:show, :edit, :update, :destroy]
 
@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     @events = Event.all.order("created_at DESC")
   end
 
-  def cms
-      @posts = Post.all.order("created_at DESC")
+  def admin
+      @events = Event.all.order("created_at DESC")
     end
 
   def new

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'events/cms' => 'events#cms'
+  get 'events/admin' => 'events#admin'
 
   resources :events
 

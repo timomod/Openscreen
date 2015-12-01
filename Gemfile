@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
 gem 'simple_form'
 gem "autoprefixer-rails"
+gem 'ionicons-rails'
 
 # Added by Timo: gem to hide access keys
 gem 'figaro'
