@@ -1,0 +1,35 @@
+
+
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+
+              <i class="icon-md ion-wrench"></i> <%=link_to "Edit cover", edit_cover_path %> &nbsp;
+              <i class="icon-md ion-ios-trash"></i> <%=link_to "Delete", cover_path(@cover), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
+
+
+
+                  <hr>
+
+                      <div class="col-md-8">
+                        <div><%= simple_format(@cover.body) %></div>
+
+                        <br>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag @cover.image.url(:medium), :class => "img-responsive center-block"%>
+                      </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

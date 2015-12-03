@@ -32,7 +32,8 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Added by Timo: changed to "true" to enable background image on Heroku...
+  #======>  Changed by Timo: changed to "true" to enable background image on Heroku...
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 

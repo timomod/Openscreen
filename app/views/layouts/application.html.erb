@@ -14,13 +14,18 @@
   <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
 
 
+
   <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="home_bg">
+<!-- <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"> -->
+<!-- <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="home_bg"> -->
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="<%= show_user_bg %>">
+
+
 
   <%= render 'shared/navigation' %>
 
