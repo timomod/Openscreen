@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :homepages
+
   get 'events/admin' => 'events#admin'
 
   resources :events
