@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :covers
+
+  resources :homepages
+
 
   get 'events/admin' => 'events#admin'
 

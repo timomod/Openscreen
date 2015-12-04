@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151203170050) do
+=======
+ActiveRecord::Schema.define(version: 20151204140628) do
+>>>>>>> modelrenew
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +58,14 @@ ActiveRecord::Schema.define(version: 20151203170050) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "homepages", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

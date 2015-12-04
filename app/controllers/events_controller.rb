@@ -7,11 +7,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all.order("created_at DESC")
     @cover = Cover.last
+    @homepage = Homepage.last
   end
 
   def admin
       @events = Event.all.order("created_at DESC")
-    end
+  end
 
   def new
     @event = Event.new
