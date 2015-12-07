@@ -4,13 +4,9 @@ class CoversController < ApplicationController
 
     before_action :find_cover, only: [:show, :edit, :update, :destroy]
 
-  def index
+  def admin
     @covers = Cover.all.order("created_at DESC")
   end
-
-  def admin
-      @covers = Cover.all.order("created_at DESC")
-    end
 
   def new
     @cover = Cover.new

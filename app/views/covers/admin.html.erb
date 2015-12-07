@@ -1,0 +1,77 @@
+<h1>Covers List</h1>
+
+<section id="published-covers" class="events-section" >
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <div><i class="ion-plus-circled"></i> <%= link_to "Create New Cover", new_cover_path %></div>
+
+
+              <h1>Live Cover<i class="icon-green ion-checkmark"></i></h1>
+
+
+              <% @covers.each do |cover| %>
+                <% if cover.published == "yes" %>
+                  <hr>
+
+                  <!-- Main content -->
+
+
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= cover.body %></div>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag cover.image.url(:thumb), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to "View Cover", cover %>
+
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <h1>Unpublished Covers <i class="icon-red ion-close"></i></h1>
+
+
+              <% @covers.each do |cover| %>
+                <% if cover.published == "no" %>
+                  <hr>
+                  <!-- Main content -->
+
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= cover.body %></div>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag cover.image.url(:thumb), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to " View Event", cover %>
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
