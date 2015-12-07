@@ -1,7 +1,7 @@
 <%= tinymce %>
 <%= simple_form_for(@cover) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :published %>
+  <%= f.input :published,  :as => :radio_buttons, :collection => [['yes', :yes], ['No', :no]] %>
   <%= f.input :body, :input_html => { :class => 'tinymce', :rows => 15, :cols => 100  } %>
    <%= f.input :image %>
 

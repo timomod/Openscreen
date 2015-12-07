@@ -5,7 +5,7 @@
   <h3>Event details:</h3>
 
   <%= f.label 'Publish event?' %><br>
-  <%= f.input :publish, label:false, placeholder: 'yes/no'  %><br>
+  <%= f.input :publish, label:false,  :as => :radio_buttons, :collection => [['yes', :yes], ['No', :no]] %><br>
 
 
 
