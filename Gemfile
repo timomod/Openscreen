@@ -14,6 +14,9 @@ gem 'simple_form'
 gem "autoprefixer-rails"
 gem 'ionicons-rails'
 
+# Added by Timo: Rich text editor
+gem 'tinymce-rails'
+
 # Added by Timo: gem to hide access keys
 gem 'figaro'
 

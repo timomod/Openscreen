@@ -3,15 +3,17 @@
  <section id="intro" class="intro-section tint">
         <div class="container cover-content">
             <div class="row">
-                <div class="col-md-12 fadeIn">
+                <div class="col-md-12 fadeIn ">
+
                   <% @covers.each do |cover| %>
                     <% if cover.published == "yes" %>
-                    <div><%= simple_format(cover.body) %></div>
+                    <div class="intro-text" ><%= simple_format(cover.body) %></div>
                     <% end %>
                   <%end%>
 
-
-                    <a class="btn-framed-light page-scroll" href="#events">Click Me to Scroll Down!</a>
+                    <div class="XXX">
+                      <a class="btn-framed-light page-scroll" href="#events">Click Me to Scroll Down!</a>
+                    </div>
                 </div>
             </div>
         </div>

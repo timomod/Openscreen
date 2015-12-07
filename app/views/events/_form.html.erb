@@ -1,4 +1,4 @@
-
+<%= tinymce %>
 
 <%= simple_form_for(@event) do |f| %>
   <%= f.error_notification %>
@@ -12,8 +12,16 @@
   <%= f.label 'Event title' %><br>
   <%= f.input :title, label: false, placeholder: 'Event name' %><br>
 
+
+
   <%= f.label 'Event description' %><br>
-  <%= f.input :body, label: false, placeholder: 'Event description', :input_html => {:cols => 100, :rows => 12} %><br>
+  <%= f.input :body, :input_html => { :class => 'tinymce', :rows => 15, :cols => 100  } %><br>
+
+
+
+
+
+
   <%= f.label 'Event deadline' %><br>
   <%= f.input :deadline, label: false, placeholder: 'dd/mm/yyyy' %><br>
   <br>
@@ -55,3 +63,4 @@
   <br><br>
   <%= f.button :submit %>
 <% end %>
+
