@@ -20,29 +20,39 @@
     <![endif]-->
 
 </head>
+
+
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+ <header id="edit-header">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="row">
+        <h1>Openscreen Admin</h1>
 
+          <div class="container-fluid">
+            <ul class="nav nav-tabs">
+              <li><%= link_to "Covers", covers_admin_path %></li>
+              <li><%= link_to "Events", events_admin_path %></li>
+              <li><%= link_to "Get Involved", covers_admin_path %></li>
+              <li><%= link_to "What Is Openscreen", covers_admin_path %></li>
+              <li><%= link_to "Return to Website", events_path %></li>
+            </ul>
+          </div>
 
-
-
-
-<div class="container-fluid">
-  <ul class="nav nav-tabs">
-    <li><%= link_to "Covers", covers_admin_path %></li>
-    <li><%= link_to "Events", events_admin_path %></li>
-    <li><%= link_to "Get Involved", covers_admin_path %></li>
-    <li><%= link_to "What Is Openscreen", covers_admin_path %></li>
-    <li><%= link_to "Return to Website", events_path %></li>
-  </ul>
-</div>
+      </div>
+    </div>
+  </div>
+</header>
 
 
 <section id="Edit">
   <div class="container-fluid">
-    <div class="col-md-10 col-md-offset-1 padded-div-s">
+    <div class="col-md-12">
       <div class="row">
 
-<%= yield %>
+
+        <%= yield %>
 
       </div>
     </div>

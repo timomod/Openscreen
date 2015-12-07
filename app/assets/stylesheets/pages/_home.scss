@@ -30,4 +30,12 @@
   background-image: linear-gradient( to right, rgba(2, 0, 0, .8), rgba(2, 0, 0, .2),rgba(2, 0, 0, .8));
 }
 
+.image_div {
+     background-position: center;
+     -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
 
