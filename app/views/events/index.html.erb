@@ -4,10 +4,11 @@
         <div class="container cover-content">
             <div class="row">
                 <div class="col-md-12 fadeIn">
-
-                    <h1><%= @homepage.title %></h1>
-                    <h2><%= @homepage.subtitle %></h2>
-                    <p><%= @homepage.body %></p>
+                  <% @covers.each do |cover| %>
+                    <% if cover.published == "yes" %>
+                    <div><%= simple_format(cover.body) %></div>
+                    <% end %>
+                  <%end%>
 
 
                     <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
@@ -67,10 +68,7 @@
                       </div>
 
                       <!-- Image -->
-                      <div class="col-md-4">
-                        <%= image_tag event.picture.url(:large), :class => "img-responsive center-block"%>
-                      </div>
-                    </div>
+
 
 
                   <!--  Add to calendar widget  -->

@@ -59,7 +59,7 @@ class CoversController < ApplicationController
 
 
   def cover_params
-    params.require(:cover).permit(:title, :subtitle, :body, :publish, :day, :month, :year, :calendar_title, :calendar_body, :start, :end, :address_one, :address_two, :covercode, :city, :week_day, :deadline, :map_url, :image)
+    params.require(:cover).permit(:title,:body, :published, :image)
   end
 
 
