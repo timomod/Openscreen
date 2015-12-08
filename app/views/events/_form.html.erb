@@ -22,53 +22,71 @@
   <%= f.input :deadline, label: 'Event Deadline', placeholder: 'dd/mm/yyyy' %><br>
 
 
+
+
   <!-- Image -->
   <br>
-  <div class="upload_label"><%= f.input :picture, label: 'Upload Image' %></div>
+  <div class="upload_label col-md-12">
+    <%= f.input :picture, label: 'Upload Image' %>
+  </div>
   <br>
+  <div class="col-md-2">
+      <%= image_tag @event.picture.url(:medium), :class => "img-responsive center-block"%>
+  </div>
+  <br>
+  <br>
+
+
 
  <!--  Add calendar input box -->
-  <div class="col-md-6 form_box_shaded">
+ <div class="col-md-12">
+    <div class="col-md-6 form_box_shaded">
 
-    <h3><i class="ion-ios-calendar-outline"></i> "Calendar, Address and Date info:</h3>
+      <h3><i class="ion-ios-calendar-outline"></i> Date, Time & Address</h3>
+      <!-- Description -->
+      <p><span class="form_box_font">Information below is used both for the "Add to Calendar" widget and displayed in the Info-Box on the website </span></p>
+      <%= f.input :calendar_title, label: false, :input_html => { :size => 50} %>
+      <br>
 
-    <p><span class="form_box_font">Short description included in both the Calendar and Email Subject line:</span></p>
-    <%= f.input :calendar_title, label: false, :input_html => { :size => 50} %>
-    <br>
-    <p><span class="form_box_font">Date and time:</span></p>
-    <%= f.input :week_day, label: 'Weekday:' , placeholder: 'Monday', collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
-    <br>
-    <%= f.input :day, label: 'Day:', collection: 1..31   %>
-    <br>
-    <%= f.input :month, label: 'Month:', collection: 1..12  %>
-    <br>
-    <%= f.input :year, 'Year:': false, collection: 2015..2030  %>
-    <br>
-    <%= f.input :start, label: 'Start Time:' , placeholder: '00:00' %>
-    <br>
-    <%= f.input :end, label: 'End Time:' , placeholder: '00:00'  %>
-    <br>
-    <p><span class="form_box_font">Address:</span></p>
-    <%= f.input :address_one, label: 'Venue:' , placeholder: 'Den Atelier'  %>
-    <br>
-    <%= f.input :address_two, label: 'Address:', placeholder: '54, rue de Hollerich'  %>
-    <br>
-    <%= f.input :postcode, label: 'Postal Code:', placeholder: 'L-1740'  %>
-    <br>
-    <%= f.input :city, label: 'City', placeholder: 'Luxembourg'  %>
-    <br>
-    <p><span class="form_box_font">Facebook Event Website URL:</span></p>
-    <%= f.input :facebook, label: 'Facebook Event URL'  %>
-    <br>
-  </div>
+      <p><span class="form_box_font"><i class="ion-ios-clock-outline"></i> Date & Time:</span></p>
+      <!-- Date -->
+      <%= f.input :week_day, label: 'Weekday:' , placeholder: 'Monday', collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+      <br>
+      <%= f.input :day, label: 'Day:', collection: 1..31   %>
+      <br>
+      <%= f.input :month, label: 'Month:', collection: 1..12  %>
+      <br>
+      <%= f.input :year, 'Year:': false, collection: 2015..2030  %>
+      <br>
+      <!-- Time -->
+      <%= f.input :start, label: 'Start Time:' , placeholder: '00:00' %>
+      <br>
+      <%= f.input :end, label: 'End Time:' , placeholder: '00:00'  %>
+      <br>
+      <p><span class="form_box_font"><i class="ion-ios-location-outline"></i> Address:</span></p>
+      <!-- Address -->
+      <%= f.input :address_one, label: 'Venue:' , placeholder: 'Den Atelier'  %>
+      <br>
+      <%= f.input :address_two, label: 'Address:', placeholder: '54, rue de Hollerich'  %>
+      <br>
+      <%= f.input :postcode, label: 'Postal Code:', placeholder: 'L-1740'  %>
+      <br>
+      <%= f.input :city, label: 'City', placeholder: 'Luxembourg'  %>
+      <br>
+      <p><span class="form_box_font"><i class="ion-social-facebook"></i> Facebook Event Link</span></p>
+      <!-- Facebook link -->
+      <%= f.input :facebook, label: 'URL:', :input_html => { :size => 50}, placeholder: 'https://www.facebook.com/events/482525048587470/'    %>
+      <br>
+    </div>
 
 
 
 
-  <div class="col-md-12">
-  <%= f.button :submit %>
-  <br>
-  <br>
-  </div>
+    <div class="col-md-12">
+    <%= f.button :submit %>
+    <br>
+    <br>
+    </div>
+</div>
 <% end %>
 
