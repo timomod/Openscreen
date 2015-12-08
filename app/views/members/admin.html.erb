@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Members List</h1>
+  </div>
+</div>
+<section id="published-members" class="events-section" >
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <div><i class="ion-plus-circled"></i> <%= link_to "Create New Member", new_member_path %></div>
+
+
+              <h1>Live Member<i class="icon-green ion-checkmark"></i></h1>
+
+
+              <% @members.each do |member| %>
+                <% if member.published == "yes" %>
+                  <hr>
+
+                  <!-- Main content -->
+
+
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= member.body %></div>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag member.image.url(:thumb), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to "View Member", member %>
+
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <h1>Unpublished Members <i class="icon-red ion-close"></i></h1>
+
+
+              <% @members.each do |member| %>
+                <% if member.published == "no" %>
+                  <hr>
+                  <!-- Main content -->
+
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div><%= member.body %></div>
+                      </div>
+
+                      <!-- Image -->
+                      <div class="col-md-4">
+                        <%= image_tag member.image.url(:thumb), :class => "img-responsive center-block"%>
+                      </div>
+                    </div>
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to " View Event", member %>
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
+

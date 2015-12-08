@@ -1,0 +1,13 @@
+<%= tinymce %>
+<%= simple_form_for(@member) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :published,  :as => :radio_buttons, :collection => [['yes', :yes], ['No', :no]] %>
+  <%= f.input :title, :input_html => { :size => 50} %>
+  <%= f.input :subtitle, :input_html => { :size => 50} %>
+  <%= f.input :body, :input_html => { :class => 'tinymce', :rows => 15, :cols => 100  } %>
+
+
+  <%= f.button :submit, label: 'Submit'  %>
+
+<% end %>

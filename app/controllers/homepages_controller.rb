@@ -1,10 +1,10 @@
 class HomepagesController < ApplicationController
 
-  layout "admin_index" , only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  layout "admin_index"
 
   before_action :find_homepage, only: [:show, :edit, :update, :destroy]
 
-  def index
+  def admin
     @homepages = Homepage.all
   end
 

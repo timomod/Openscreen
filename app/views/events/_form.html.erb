@@ -10,7 +10,7 @@
 
 
   <br>
-  <%= f.input :title, label: 'Event title', placeholder: 'Event name' %><br>
+  <%= f.input :title, label: 'Event title', placeholder: 'Event name', :input_html => { :size => 50} %><br>
 
 
 
@@ -43,9 +43,10 @@
     <div class="col-md-6 form_box_shaded">
 
       <h3><i class="ion-ios-calendar-outline"></i> Date, Time & Address</h3>
+
+      <p><span class="form_box_font">Information below is used both for the "Add to Calendar" widget and for display in the Info-Box on the website </span></p>
       <!-- Description -->
-      <p><span class="form_box_font">Information below is used both for the "Add to Calendar" widget and displayed in the Info-Box on the website </span></p>
-      <%= f.input :calendar_title, label: false, :input_html => { :size => 50} %>
+      <%= f.input :calendar_title, label: 'Event Description', :input_html => { :size => 50} %>
       <br>
 
       <p><span class="form_box_font"><i class="ion-ios-clock-outline"></i> Date & Time:</span></p>

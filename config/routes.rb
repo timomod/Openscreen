@@ -1,17 +1,26 @@
 Rails.application.routes.draw do
 
-  get 'events/admin' => 'events#admin'
+  root 'events#index'
+
 
   get 'covers/admin' => 'covers#admin'
+
+  get 'events/admin' => 'events#admin'
+
+  get 'members/admin' => 'members#admin'
+
+  get 'homepages/admin' => 'homepages#admin'
 
 
   resources :covers
 
-  resources :homepages
-
   resources :events
 
-   root 'events#index'
+  resources :members
+
+  resources :homepages
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

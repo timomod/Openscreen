@@ -1,0 +1,38 @@
+
+<br>
+<div class="col-md-10 col-md-offset-1"><i class="ion-backspace"></i> <%= link_to "Back", members_admin_path %></div>
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+
+
+
+
+
+                  <!-- Edit and delete links for each entry -->
+                  <!-- Data-no-turbolink  => true... makes sure TinyMCE loads -->
+                  <i class="icon-md ion-wrench"></i> <%=link_to "Edit Join Us", edit_member_path, 'data-no-turbolink' => true   %> &nbsp;
+                  <i class="icon-md ion-ios-trash"></i> <%=link_to "Delete", member_path(@member), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
+                  <hr>
+                  <!-- Headline text -->
+                  <div class="col-md-8">
+                    <div><%= simple_format(@member.body) %></div> <br>
+                  </div>
+
+                  <!-- Image -->
+                  <div class="col-md-4">
+                    <%= image_tag @member.image.url(:medium), :class => "img-responsive center-block"%>
+                  </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
