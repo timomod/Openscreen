@@ -12,7 +12,8 @@
 
 
                   <!-- Edit and delete links for each entry -->
-                  <i class="icon-md ion-wrench"></i> <%=link_to "Edit cover", edit_cover_path %> &nbsp;
+                  <!-- Data-no-turbolink  => true... makes sure TinyMCE loads -->
+                  <i class="icon-md ion-wrench"></i> <%=link_to "Edit cover", edit_cover_path, 'data-no-turbolink' => true   %> &nbsp;
                   <i class="icon-md ion-ios-trash"></i> <%=link_to "Delete", cover_path(@cover), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
                   <hr>
                   <!-- Headline text -->

@@ -6,69 +6,69 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
 
+              <!-- Edit and delete links for each entry -->
+              <!-- Data-no-turbolink  => true... makes sure TinyMCE loads -->
+              <i class="icon-md ion-wrench"></i> <%=link_to "Edit event", edit_event_path, 'data-no-turbolink' => true  %> &nbsp;
 
-              <i class="icon-md ion-wrench"></i> <%=link_to "Edit event", edit_event_path %> &nbsp;
               <i class="icon-md ion-ios-trash"></i> <%=link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
 
+              <hr>
+
+              <!-- Main content -->
+
+              <h3><%= @event.week_day %>, <%= @event.day %>.<%= @event.month  %>.<%= @event.year  %></h3>
+              <h2><%=  @event.title %></h2>
+              <div class="row">
+                <div class="col-md-8">
+                  <div><%= simple_format(@event.body) %></div>
+                  <br>
+                </div>
+
+                <!-- Image -->
+                <div class="col-md-4">
+                  <%= image_tag @event.picture.url(:large), :class => "img-responsive center-block"%>
+                </div>
+              </div>
 
 
-                  <hr>
-                  <!-- Main content -->
+              <!--  Calendar widget  -->
 
-                    <h3><%= @event.week_day %>, <%= @event.day %>.<%= @event.month  %>.<%= @event.year  %></h3>
-                    <h2><%=  @event.title %></h2>
-                    <div class="row">
-                      <div class="col-md-8">
-                        <div><%= simple_format(@event.body) %></div>
+              <div class="addeventatc">
 
-                        <br>
-                      </div>
+                <div title="Add to Calendar" >
+                    Add to Calendar
+                    <span class="start"><%= @event.day %>/<%= @event.month %>/<%= @event.year %> <%= @event.start %></span>
+                    <span class="end"><%= @event.day %>/<%= @event.month %>/<%= @event.year %> <%= @event.end %></span>
+                    <span class="timezone">Europe/Luxembourg</span>
+                    <span class="title"><%= @event.calendar_title %></span>
+                    <span class="description"><%= @event.calendar_body%></span>
+                    <span class="location"><%= @event.address_one %> <br><%= @event.address_two %>,<%= @event.postcode %> <%= @event.city %></span>
+                    <span class="facebook_event"></span>
+                    <span class="date_format">DD/MM/YYYY</span>
+                  </div>
 
-                      <!-- Image -->
-                      <div class="col-md-4">
-                        <%= image_tag @event.picture.url(:large), :class => "img-responsive center-block"%>
-                      </div>
-                    </div>
+              </div>
+              <!--  End add to calendar -->
 
+              <!-- Info Box-->
+              <div class="row">
+                <div class="col-md-12 shaded-bg text-center">
 
-                     <!--  Calendar widget  -->
+                  <div class="col-sm-12 col-md-4">
+                    <i class="icon ion-ios-email-outline"></i><br><a href="mailto:info@openscreen.lu?Subject=<%= @event.calendar_title %>">info@openscreen.lu</a></p>
+                  </div>
 
-                  <div class="addeventatc">
+                  <div class="col-sm-12 col-md-4 ">
+                    <i class="icon ion-ios-location-outline"></i><br><%= @event.address_one %><br><%= @event.address_two %><br>
+                    <%= @event.postcode %> <%= @event.city %> <br>(<a href="https://goo.gl/maps/QKWDRHrV1LU2" target="blank">View map</a>)
+                  </div>
 
-                     <div title="Add to Calendar" >
-                        Add to Calendar
-                        <span class="start"><%= @event.day %>/<%= @event.month %>/<%= @event.year %> <%= @event.start %></span>
-                        <span class="end"><%= @event.day %>/<%= @event.month %>/<%= @event.year %> <%= @event.end %></span>
-                        <span class="timezone">Europe/Luxembourg</span>
-                        <span class="title"><%= @event.calendar_title %></span>
-                        <span class="description"><%= @event.calendar_body%></span>
-                        <span class="location"><%= @event.address_one %> <br><%= @event.address_two %>,<%= @event.postcode %> <%= @event.city %></span>
-                        <span class="facebook_event"></span>
-                        <span class="date_format">DD/MM/YYYY</span>
-                      </div>
-                    </div>
+                  <div class="col-sm-12 col-md-4">
+                    <i class="icon ion-ios-clock-outline"></i><br><%=  @event.start %> CET<br><%= @event.week_day %>, <%= @event.day %>.<%= @event.month %>.<%= @event.year %>
+                  </div>
 
-                   <!--  End add to calendar -->
-
-                   <!-- Info Box-->
-                    <div class="row">
-                      <div class="col-md-12 shaded-bg text-center">
-
-                        <div class="col-sm-12 col-md-4">
-                          <i class="icon ion-ios-email-outline"></i><br><a href="mailto:info@openscreen.lu?Subject=<%= @event.calendar_title %>">info@openscreen.lu</a></p>
-                        </div>
-
-                        <div class="col-sm-12 col-md-4 ">
-                          <i class="icon ion-ios-location-outline"></i><br><%= @event.address_one %><br><%= @event.address_two %><br>
-                          <%= @event.postcode %> <%= @event.city %> <br>(<a href="https://goo.gl/maps/QKWDRHrV1LU2" target="blank">View map</a>)
-                        </div>
-
-                        <div class="col-sm-12 col-md-4">
-                          <i class="icon ion-ios-clock-outline"></i><br><%=  @event.start %> CET<br><%= @event.week_day %>, <%= @event.day %>.<%= @event.month %>.<%= @event.year %>
-                        </div>
-
-                      </div>
-                    </div>
+                </div>
+              </div>
 
 
 
