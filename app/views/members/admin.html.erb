@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1>Members List</h1>
+    <h1>"Get Involved!" List</h1>
   </div>
 </div>
 <section id="published-members" class="events-section" >
@@ -10,10 +10,15 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
-                <div><i class="ion-plus-circled"></i> <%= link_to "Create New Member", new_member_path %></div>
+              <div><i class="icon-green ion-plus-circled"></i> <%= link_to "Create New Get Involved entry", new_member_path %>
+                </div>
+                <br>
+                <hr>
+                <br>
 
 
-              <h1>Live Member<i class="icon-green ion-checkmark"></i></h1>
+
+              <h1>Live "Get Involved!" Entry<i class="icon-green ion-checkmark"></i></h1>
 
 
               <% @members.each do |member| %>
@@ -23,19 +28,31 @@
                   <!-- Main content -->
 
 
-                    <div class="row">
-                      <div class="col-md-8">
-                        <div><%= member.body %></div>
-                      </div>
+                  <!-- Headline text -->
+                  <div class="col-md-12">
+                    <h1><%= member.title %></h1> <br>
+                  </div>
+                  <!-- Sub header -->
+                  <div class="col-md-12">
+                    <h2><%= member.subtitle %></h2> <br>
+                  </div>
+                  <!-- Body text -->
+                  <div class="col-md-8">
+                    <div><%= simple_format(member.body) %></div> <br>
+                  </div>
 
                       <!-- Image -->
-                      <div class="col-md-4">
-                        <%= image_tag member.image.url(:thumb), :class => "img-responsive center-block"%>
-                      </div>
-                    </div>
+
+                      <!-- Removed temporarily-->
+
+
 
                   <br>
+                   <div class="col-md-12">
                   <i class="icon-md ion-ios-eye"></i> <%= link_to "View Member", member %>
+                  </div>
+
+                </div>
 
                 <% end %>
               <% end %>
@@ -50,7 +67,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
-              <h1>Unpublished Members <i class="icon-red ion-close"></i></h1>
+              <h1>Unpublished "Get Involved!" Entries <i class="icon-red ion-close"></i></h1>
 
 
               <% @members.each do |member| %>
@@ -58,16 +75,21 @@
                   <hr>
                   <!-- Main content -->
 
-                    <div class="row">
-                      <div class="col-md-8">
-                        <div><%= member.body %></div>
-                      </div>
+                  <!-- Headline text -->
+                  <div class="col-md-12">
+                    <h1><%= member.title %></h1> <br>
+                  </div>
+                  <!-- Sub header -->
+                  <div class="col-md-12">
+                    <h2><%= member.subtitle %></h2> <br>
+                  </div>
+                  <!-- Body text -->
+                  <div class="col-md-8">
+                    <div><%= simple_format(member.body) %></div> <br>
+                  </div>
 
                       <!-- Image -->
-                      <div class="col-md-4">
-                        <%= image_tag member.image.url(:thumb), :class => "img-responsive center-block"%>
-                      </div>
-                    </div>
+                     <!-- Remove -->
 
                   <br>
                   <i class="icon-md ion-ios-eye"></i> <%= link_to " View Event", member %>

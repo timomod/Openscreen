@@ -30,9 +30,16 @@
     <%= f.input :picture, label: 'Upload Image' %>
   </div>
   <br>
+  <!-- Display image or deafult -->
   <div class="col-md-2">
+      <%if @event.picture.present? %>
       <%= image_tag @event.picture.url(:medium), :class => "img-responsive center-block"%>
+       <% else %>
+       <%= image_tag "logo_ons.png", {class: "logo-wide"}%>
+       <% end %>
   </div>
+
+
   <br>
   <br>
 

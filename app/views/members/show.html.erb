@@ -18,13 +18,18 @@
                   <hr>
                   <!-- Headline text -->
                   <div class="col-md-8">
+                    <h1><%= @member.title %></h1> <br>
+                  </div>
+                  <!-- Sub header -->
+                  <div class="col-md-8">
+                    <h2><%= @member.subtitle %></h2> <br>
+                  </div>
+                  <!-- Body text -->
+                  <div class="col-md-8">
                     <div><%= simple_format(@member.body) %></div> <br>
                   </div>
 
-                  <!-- Image -->
-                  <div class="col-md-4">
-                    <%= image_tag @member.image.url(:medium), :class => "img-responsive center-block"%>
-                  </div>
+
 
 
 

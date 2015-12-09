@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all.order("created_at DESC")
     @covers = Cover.all.order("created_at DESC")
+    @members = Member.all.order("created_at DESC")
     @homepage = Homepage.last
   end
 
@@ -45,7 +46,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to root_path
+    redirect_to events_admin_path
   end
 
 
