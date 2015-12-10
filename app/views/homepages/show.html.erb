@@ -1,8 +1,42 @@
-<h1>Cover Page Headline</h1>
+<br>
+<div class="col-md-10 col-md-offset-1"><i class="ion-backspace"></i> <%= link_to "Back", homepages_admin_path %></div>
+<section class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
 
-<i class="icon-md ion-wrench"></i> <%=link_to "Edit Headline", edit_homepage_path %>
-<hr>
 
-<h2><%= @homepage.title %></h2>
-<h3><%= @homepage.subtitle %></h3>
-<p><%= @homepage.body %></p>
+
+
+
+
+                  <!-- Edit and delete links for each entry -->
+                  <!-- Data-no-turbolink  => true... makes sure TinyMCE loads -->
+                  <i class="icon-md ion-wrench"></i> <%=link_to "Edit What We Do? Page", edit_homepage_path, 'data-no-turbolink' => true   %> &nbsp;
+                  <i class="icon-md ion-ios-trash"></i> <%=link_to "Delete", homepage_path(@homepage), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
+                  <hr>
+                  <!-- Headline text -->
+                  <div class="col-md-8">
+                    <h1><%= @homepage.title %></h1> <br>
+                  </div>
+                  <!-- Sub header -->
+                  <div class="col-md-8">
+                    <h2><%= @homepage.subtitle %></h2> <br>
+                  </div>
+                  <!-- Body text -->
+                  <div class="col-md-8">
+                    <div><%= simple_format(@homepage.body) %></div> <br>
+                  </div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

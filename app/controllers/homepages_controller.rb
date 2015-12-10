@@ -55,7 +55,7 @@ class HomepagesController < ApplicationController
 
 
   def homepage_params
-    params.require(:homepage).permit(:title, :subtitle, :body,)
+    params.require(:homepage).permit(:title, :subtitle, :body,:image,)
   end
 
 
