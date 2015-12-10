@@ -17,7 +17,7 @@
                   <i class="icon-md ion-ios-trash"></i> <%=link_to "Delete", member_path(@member), method: :delete, data: { confirm: "Are your sure you want to delete?"} %>
                   <hr>
                   <!-- Headline text -->
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                     <h1><%= @member.title %></h1> <br>
                   </div>
                   <!-- Sub header -->
@@ -27,6 +27,10 @@
                   <!-- Body text -->
                   <div class="col-md-8">
                     <div><%= simple_format(@member.body) %></div> <br>
+                  </div>
+                  <!-- Image -->
+                  <div class="col-md-4">
+                    <div> <%= image_tag @member.image.url(:large), :class => "img-responsive center-block"%></div> <br>
                   </div>
 
 

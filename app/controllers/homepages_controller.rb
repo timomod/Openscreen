@@ -39,7 +39,7 @@ class HomepagesController < ApplicationController
 
   def destroy
     @homepage.destroy
-    redirect_to root_path
+    redirect_to homepages_admin_path
   end
 
 

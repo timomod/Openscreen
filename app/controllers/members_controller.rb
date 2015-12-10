@@ -55,7 +55,7 @@ class MembersController < ApplicationController
 
 
   def member_params
-    params.require(:member).permit(:title, :subtitle, :body, :published,:image)
+    params.require(:member).permit(:title, :subtitle, :body, :published, :image)
   end
 
 
