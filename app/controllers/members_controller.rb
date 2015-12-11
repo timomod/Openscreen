@@ -39,7 +39,7 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to root_path
+    redirect_to members_admin_path
   end
 
 

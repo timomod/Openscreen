@@ -1,19 +1,38 @@
 
-// Cover section styles
+// => Begin Cover section styles
 
 .intro-text {
+
+}
+
+// Positions cover page content
+.cover-content{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
   line-height: 2px;
+
 }
 
 
+// Adds background image
+#home_bg {
+      background: url('home.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
 
+// Box at bottom of all Event sections
 .shaded-bg {
   background-color: #EFEFEF;
   padding: 50px 10px 50px 10px;
   margin-top: 60px;
   margin-bottom: 20px;
-  border-left: 15px solid #fff;
-  border-right: 15px solid #fff;
+  border-left: 0px solid #fff;
+  border-right: 0px solid #fff;
 }
 
 
@@ -26,6 +45,20 @@
 }
 
 
+// => End Cover section styles
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .sponsor-section {
     padding-top: 50px;
@@ -35,22 +68,46 @@
     border-bottom: 1px solid #ccc;
 }
 
-.events-section {
+#divide01 {
+  background: url('parallax01.jpg') 50% 0 no-repeat fixed; min-height: 360px;
+   -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  height: 300px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+  position: relative;
 
+}
+
+#divide02 {
+  background: url('bg.jpg') 50% 0 repeat fixed; min-height: 360px;
+  height: 300px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+  position: relative;
+
+}
+
+.events-section {
     padding-top: 100px;
     background: #fff;
+    border-bottom: 1px solid #ccc;
 }
 
 .getinvolved-section {
-
     padding-top: 100px;
     background: #fff;
+    border-bottom: 1px solid #ccc;
 }
 
 .about-section {
-
     padding-top: 100px;
-    background: #fff;
+    background: #fff;border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 

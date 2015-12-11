@@ -1,4 +1,104 @@
 
-<h1>Homepages#admin</h1>
-<p>Find me in app/views/homepages/index.html.erb</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>"What is Openscreen?" Sections</h1>
+  </div>
+</div>
+<section class="about-section" >
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <div><i class="icon-green ion-plus-circled"></i> <%= link_to "Create New Get Involved entry", new_homepage_path %>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+              <h1>Live "What's Openscreen" Entry<i class="icon-green ion-checkmark"></i></h1>
+
+
+              <% @homepages.each do |homepage| %>
+                <% if homepage.published == "yes" %>
+                  <hr>
+
+                  <!-- Main content -->
+
+
+                  <!-- Headline text -->
+                  <div class="col-md-12">
+                    <h1><%= homepage.title %></h1> <br>
+                  </div>
+                  <!-- Sub header -->
+                  <div class="col-md-12">
+                    <h2><%= homepage.subtitle %></h2> <br>
+                  </div>
+                  <!-- Body text -->
+                  <div class="col-md-8">
+                    <div><%= simple_format(homepage.body) %></div> <br>
+                  </div>
+                  <!-- Image -->
+                   <div class="col-md-4">
+                    <div> <%= image_tag homepage.image.url(:large), :class => "img-responsive center-block"%></div> <br>
+                  </div>
+
+
+
+
+                  <br>
+                   <div class="col-md-12">
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to "View Member", homepage %>
+                  </div>
+
+                </div>
+
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="published-events" class="events-section" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+              <h1>Unpublished "What's Openscreen!" Entries <i class="icon-red ion-close"></i></h1>
+
+
+              <% @homepages.each do |homepage| %>
+                <% if homepage.published == "no" || nil %>
+                  <hr>
+                  <!-- Main content -->
+
+                  <!-- Headline text -->
+                  <div class="col-md-12">
+                    <h1><%= homepage.title %></h1> <br>
+                  </div>
+                  <!-- Sub header -->
+                  <div class="col-md-12">
+                    <h2><%= homepage.subtitle %></h2> <br>
+                  </div>
+                  <!-- Body text -->
+                  <div class="col-md-8">
+                    <div><%= simple_format(homepage.body) %></div> <br>
+                  </div>
+
+                      <!-- Image -->
+                     <!-- Remove -->
+
+                  <br>
+                  <i class="icon-md ion-ios-eye"></i> <%= link_to " View Event", homepage %>
+                <% end %>
+              <% end %>
+
+            </div>
+        </div>
+    </div>
+</section>
 

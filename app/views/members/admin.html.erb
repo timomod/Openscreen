@@ -40,10 +40,10 @@
                   <div class="col-md-8">
                     <div><%= simple_format(member.body) %></div> <br>
                   </div>
-
-                      <!-- Image -->
-
-                      <!-- Removed temporarily-->
+                  <!-- Image -->
+                   <div class="col-md-4">
+                    <div> <%= image_tag member.image.url(:large), :class => "img-responsive center-block"%></div> <br>
+                  </div>
 
 
 
@@ -71,7 +71,7 @@
 
 
               <% @members.each do |member| %>
-                <% if member.published == "no" %>
+                <% if member.published == "no" || nil %>
                   <hr>
                   <!-- Main content -->
 

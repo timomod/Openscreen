@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @events = Event.all.order("created_at DESC")
     @covers = Cover.all.order("created_at DESC")
     @members = Member.all.order("created_at DESC")
-    @homepage = Homepage.last
+    @homepages = Homepage.all.order("created_at DESC")
   end
 
   def admin

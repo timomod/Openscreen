@@ -1,9 +1,22 @@
+<%= tinymce %>
 <%= simple_form_for(@homepage) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :title %>
-  <%= f.input :subtitle %>
-  <%= f.input :body %>
-  <%= f.input :image %>
-  <%= f.button :submit %>
+  <%= f.input :published,  :as => :radio_buttons, :collection => [['yes', :yes], ['No', :no]] %>
+  <%= f.input :title, :input_html => { :size => 50} %>
+  <%= f.input :subtitle, :input_html => { :size => 50} %>
+  <%= f.input :body, :input_html => { :class => 'tinymce', :rows => 15, :cols => 100  } %>
+
+  <div class="upload_label col-md-12">
+    <%= f.input :image, label: 'Upload Image' %>
+  </div>
+
+  <br>
+
+   <div class="col-md-12">
+  <%= f.button :submit, label: 'Submit'  %>
+  </div>
+
 <% end %>
+
+<br>
