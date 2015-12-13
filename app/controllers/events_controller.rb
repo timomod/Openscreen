@@ -7,8 +7,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all.order("created_at DESC")
     @covers = Cover.all.order("created_at DESC")
+
+    @cover = Cover.find_by(:published => 'yes')
+
     @members = Member.all.order("created_at DESC")
     @homepages = Homepage.all.order("created_at DESC")
+
   end
 
   def admin

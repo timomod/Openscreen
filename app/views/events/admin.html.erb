@@ -5,7 +5,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-              <div><%= link_to "Create New Event", new_event_path %></div>
+
+              <!-- New event button -->
+              <div><i class="icon-green ion-plus-circled"></i> <%= link_to "Create New Event", new_event_path, :class => "btn-framed-green" %>
+              </div>
 
               <h1>Published Events <i class="icon-green ion-checkmark"></i></h1>
 

@@ -1,9 +1,7 @@
 
 // => Begin Cover section styles
 
-.intro-text {
 
-}
 
 // Positions cover page content
 .cover-content{
@@ -16,9 +14,13 @@
 }
 
 
-// Adds background image
-#home_bg {
-      background: url('home.jpg') no-repeat center center fixed;
+
+
+
+
+// Styles the background image (image link on appications.html.erb)
+.home_bg {
+
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
