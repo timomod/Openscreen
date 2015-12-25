@@ -5,6 +5,7 @@
             <div class="row">
                 <div class="col-md-12 fadeIn ">
 
+                  <!-- Cover Text shown if published is "yes" -->
                   <% @covers.each do |cover| %>
                     <% if cover.published == "yes" %>
                     <div class="intro-text" ><%= simple_format(cover.body) %></div>

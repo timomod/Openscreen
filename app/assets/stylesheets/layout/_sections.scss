@@ -21,11 +21,22 @@
 // Styles the background image (image link on appications.html.erb)
 .home_bg {
 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+
+
+    position:relative;
+    background-repeat: no-repeat;
+    // positions background image when view window is reduced
+    // e.g 20% 80% = mostly left side that remains visible
+    background-position: 20% 80%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+
     }
+
+
+
 
 // Box at bottom of all Event sections
 .shaded-bg {

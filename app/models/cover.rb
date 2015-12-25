@@ -1,7 +1,7 @@
 class Cover < ActiveRecord::Base
 
   has_attached_file :image,
-    styles: { xlarge: "1600x1600>", medium: "300x300>", thumb: "100x100>" }
+    styles: { xlarge: "1600x1600>", large: "600x600>", medium: "300x300>", thumb: "100x100>" }
 
   validates_attachment_content_type :image,
     content_type: /\Aimage\/.*\z/
