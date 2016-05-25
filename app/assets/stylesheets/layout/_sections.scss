@@ -55,7 +55,15 @@
     height: 100%;
     text-align: center;
     background: transparent;
+
 }
+
+.intro-text {
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
 
 
 // => End Cover section styles
@@ -92,16 +100,25 @@
   width: 100%;
   color: #fff;
   position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px 24px #000000;
 
 }
 
 #divide02 {
   background: url('bg.jpg') 50% 0 repeat fixed; min-height: 360px;
+   -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
   height: 300px;
   margin: 0 auto;
   width: 100%;
   color: #fff;
   position: relative;
+  padding-top:40px;
+  padding-bottom:40px;
 
 }
 

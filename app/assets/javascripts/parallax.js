@@ -4,6 +4,7 @@
 
 // Parallax
 $(document).ready(function(){
+
     if (!device.tablet() && !device.mobile()) {
         $(".parallax").addClass("fixed");
         $window = $(window);
@@ -24,3 +25,5 @@ $(document).ready(function(){
         document.createElement("section");
     }
 });
+
+
